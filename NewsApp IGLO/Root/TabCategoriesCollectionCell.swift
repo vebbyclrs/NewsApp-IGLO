@@ -1,5 +1,5 @@
 //
-//  TabCollectionViewCell.swift
+//  TabCategoriesCollectionCell.swift
 //  NewsApp IGLO
 //
 //  Created by Vebby Clarissa on 14/04/20.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-class TabCollectionViewCell: UICollectionViewCell {
-    
+class TabCategoriesCollectionCell: UICollectionViewCell {
     lazy var categoryLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

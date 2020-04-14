@@ -9,11 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var sources : [Source]?
+    var isFetching : Bool = false
 
     lazy var tableView : UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         return tableView
     }()
     
@@ -23,24 +27,24 @@ class ViewController: UIViewController {
         layout.itemSize = CGSize(width: 120, height: 30)
         layout.minimumLineSpacing = 8
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
-        collectionView.register(TabCollectionViewCell.self, forCellWithReuseIdentifier: "CategoryCell")
+        collectionView.register(TabCategoriesCollectionCell.self, forCellWithReuseIdentifier: "CategoryCell")
         return collectionView
     }()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "News"
+        navigationItem.title = "News Sources"
         initView()
+        loadSourceData(category: nil)
     }
     
     func initView() {
+        view.backgroundColor = .white
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(categoryView)
         NSLayoutConstraint.activate([
@@ -52,29 +56,49 @@ class ViewController: UIViewController {
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: categoryView.bottomAnchor, constant: 8),
+            tableView.topAnchor.constraint(equalTo: categoryView.bottomAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
         ])
     }
+    
+    func loadSourceData(category : String?) {
+        isFetching = true
+        API.fetchNewsSources(newsCategory: category) { (sourceList) in
+            guard let sources = sourceList else {return}
+            self.sources = sources
+            self.tableView.reloadData()
+            self.isFetching = false
+        }
+    }
 
 }
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        newsCategories.count
+        Constant.newsCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //FIXME: bikin UICollectionViewCell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! TabCollectionViewCell
-        cell.categoryLabel.text = newsCategories[indexPath.row].capitalized
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! TabCategoriesCollectionCell
+        cell.categoryLabel.text = Constant.newsCategories[indexPath.row].capitalized
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! TabCollectionViewCell
-        cell.contentView.backgroundColor = .gray
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! TabCategoriesCollectionCell
+        
+        if !isFetching {
+            if indexPath.row == 0 {
+                loadSourceData(category: nil)
+            } else {
+                loadSourceData(category: Constant.newsCategories[indexPath.row])
+            }
+        } else {
+            collectionView.deselectItem(at: indexPath, animated: false)
+        }
+            
         print (indexPath)
     }
 }
