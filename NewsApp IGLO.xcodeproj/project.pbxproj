@@ -10,9 +10,9 @@
 		CC3EC4762445833D0052EDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4752445833D0052EDD7 /* AppDelegate.swift */; };
 		CC3EC4782445833D0052EDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4772445833D0052EDD7 /* SceneDelegate.swift */; };
 		CC3EC47A2445833D0052EDD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4792445833D0052EDD7 /* ViewController.swift */; };
-		CC3EC47D2445833D0052EDD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3EC47B2445833D0052EDD7 /* Main.storyboard */; };
 		CC3EC47F2445833F0052EDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC3EC47E2445833F0052EDD7 /* Assets.xcassets */; };
 		CC3EC4822445833F0052EDD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3EC4802445833F0052EDD7 /* LaunchScreen.storyboard */; };
+		CC3EC48A2445A67F0052EDD7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4892445A67F0052EDD7 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +20,10 @@
 		CC3EC4752445833D0052EDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC3EC4772445833D0052EDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CC3EC4792445833D0052EDD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CC3EC47C2445833D0052EDD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC3EC47E2445833F0052EDD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC3EC4812445833F0052EDD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC3EC4832445833F0052EDD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC3EC4892445A67F0052EDD7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 				CC3EC4752445833D0052EDD7 /* AppDelegate.swift */,
 				CC3EC4772445833D0052EDD7 /* SceneDelegate.swift */,
 				CC3EC4792445833D0052EDD7 /* ViewController.swift */,
-				CC3EC47B2445833D0052EDD7 /* Main.storyboard */,
+				CC3EC4892445A67F0052EDD7 /* API.swift */,
 				CC3EC47E2445833F0052EDD7 /* Assets.xcassets */,
 				CC3EC4802445833F0052EDD7 /* LaunchScreen.storyboard */,
 				CC3EC4832445833F0052EDD7 /* Info.plist */,
@@ -127,7 +127,6 @@
 			files = (
 				CC3EC4822445833F0052EDD7 /* LaunchScreen.storyboard in Resources */,
 				CC3EC47F2445833F0052EDD7 /* Assets.xcassets in Resources */,
-				CC3EC47D2445833D0052EDD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +139,7 @@
 			files = (
 				CC3EC47A2445833D0052EDD7 /* ViewController.swift in Sources */,
 				CC3EC4762445833D0052EDD7 /* AppDelegate.swift in Sources */,
+				CC3EC48A2445A67F0052EDD7 /* API.swift in Sources */,
 				CC3EC4782445833D0052EDD7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CC3EC47B2445833D0052EDD7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC3EC47C2445833D0052EDD7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC3EC4802445833F0052EDD7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,6 +279,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C5K4FW28Q2;
 				INFOPLIST_FILE = "NewsApp IGLO/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +298,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C5K4FW28Q2;
 				INFOPLIST_FILE = "NewsApp IGLO/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
