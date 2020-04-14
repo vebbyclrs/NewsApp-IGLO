@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     var sources : [Source]?
+    var filteredSources : [Source]?
     var isFetching : Bool = false
+    var isSearching : Bool = false
 
     lazy var tableView : UITableView = {
         let tableView = UITableView()
@@ -21,10 +23,15 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-//    lazy var searchController : UISearchController = {
-//       let searchController = UISearchController(searchResultsController: nil)
-//        searchController.
-//    }()
+    lazy var searchController : UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.placeholder = "Find news source"
+        searchController.searchBar.isHidden = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        return searchController
+    }()
     
     lazy var categoryView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -49,6 +56,8 @@ class ViewController: UIViewController {
     }
     
     func initView() {
+        self.navigationItem.searchController = searchController
+        
         view.backgroundColor = .white
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(categoryView)
@@ -80,11 +89,25 @@ class ViewController: UIViewController {
 
 }
 
-//extension ViewController : UISearchBarDelegate, UISearchControllerDelegate {
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        <#code#>
-//    }
-//}
+extension ViewController : UISearchBarDelegate, UISearchControllerDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        isSearching = true
+        guard !searchText.isEmpty else {
+            filteredSources = sources
+            tableView.reloadData()
+            return
+        }
+        filteredSources = sources?.filter({ (source) -> Bool in
+            (source.name?.lowercased().contains(searchText.lowercased()))!
+        })
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+        tableView.reloadData()
+    }
+}
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
