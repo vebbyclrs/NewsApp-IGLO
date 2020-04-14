@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.9.0)
+  - Pageboy (3.5.1)
+  - SwiftyJSON (5.0.0)
+  - Tabman (2.8.0):
+    - Pageboy (~> 3.5.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SwiftyJSON
+  - Tabman (~> 2.6)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Pageboy
+    - SwiftyJSON
+    - Tabman
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Pageboy: 288353d4cc848c24deec2f7542f325089247c136
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Tabman: f62ad94ee54a7d96e3fbab34f677d9ea4d38ece6
+
+PODFILE CHECKSUM: 527ab9e79f2889523ae602ac9616aa8e799a04ef
+
+COCOAPODS: 1.8.4
