@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		34875CBA782AE72E761CE4C0 /* Pods_NewsApp_IGLO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8880B8A23F75B348A0205EE /* Pods_NewsApp_IGLO.framework */; };
+		CC2BDD5A2445BDA400B06C93 /* TabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2BDD592445BDA400B06C93 /* TabCollectionViewCell.swift */; };
 		CC3EC4762445833D0052EDD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4752445833D0052EDD7 /* AppDelegate.swift */; };
 		CC3EC4782445833D0052EDD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4772445833D0052EDD7 /* SceneDelegate.swift */; };
 		CC3EC47A2445833D0052EDD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4792445833D0052EDD7 /* ViewController.swift */; };
 		CC3EC47F2445833F0052EDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC3EC47E2445833F0052EDD7 /* Assets.xcassets */; };
 		CC3EC4822445833F0052EDD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC3EC4802445833F0052EDD7 /* LaunchScreen.storyboard */; };
 		CC3EC48A2445A67F0052EDD7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC4892445A67F0052EDD7 /* API.swift */; };
-		CC3EC48C2445AB080052EDD7 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC48B2445AB080052EDD7 /* TabViewController.swift */; };
 		CC3EC48E2445ADB80052EDD7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC48D2445ADB80052EDD7 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2912C9EA2C6FCA697B19CA6C /* Pods-NewsApp IGLO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp IGLO.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp IGLO/Pods-NewsApp IGLO.debug.xcconfig"; sourceTree = "<group>"; };
 		51784050D0FF15E1358E85A7 /* Pods-NewsApp IGLO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp IGLO.release.xcconfig"; path = "Target Support Files/Pods-NewsApp IGLO/Pods-NewsApp IGLO.release.xcconfig"; sourceTree = "<group>"; };
+		CC2BDD592445BDA400B06C93 /* TabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC3EC4722445833D0052EDD7 /* NewsApp IGLO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NewsApp IGLO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3EC4752445833D0052EDD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC3EC4772445833D0052EDD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		CC3EC4812445833F0052EDD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC3EC4832445833F0052EDD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC3EC4892445A67F0052EDD7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		CC3EC48B2445AB080052EDD7 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		CC3EC48D2445ADB80052EDD7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D8880B8A23F75B348A0205EE /* Pods_NewsApp_IGLO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp_IGLO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -54,6 +54,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CC2BDD572445BD6D00B06C93 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CC2BDD582445BD6E00B06C93 /* Category Tab View */ = {
+			isa = PBXGroup;
+			children = (
+				CC2BDD592445BDA400B06C93 /* TabCollectionViewCell.swift */,
+			);
+			path = "Category Tab View";
+			sourceTree = "<group>";
+		};
 		CC3EC4692445833D0052EDD7 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +90,8 @@
 		CC3EC4742445833D0052EDD7 /* NewsApp IGLO */ = {
 			isa = PBXGroup;
 			children = (
+				CC2BDD582445BD6E00B06C93 /* Category Tab View */,
+				CC2BDD572445BD6D00B06C93 /* New Group */,
 				CC3EC4752445833D0052EDD7 /* AppDelegate.swift */,
 				CC3EC4772445833D0052EDD7 /* SceneDelegate.swift */,
 				CC3EC4792445833D0052EDD7 /* ViewController.swift */,
@@ -83,7 +100,6 @@
 				CC3EC47E2445833F0052EDD7 /* Assets.xcassets */,
 				CC3EC4802445833F0052EDD7 /* LaunchScreen.storyboard */,
 				CC3EC4832445833F0052EDD7 /* Info.plist */,
-				CC3EC48B2445AB080052EDD7 /* TabViewController.swift */,
 			);
 			path = "NewsApp IGLO";
 			sourceTree = "<group>";
@@ -213,8 +229,8 @@
 			files = (
 				CC3EC47A2445833D0052EDD7 /* ViewController.swift in Sources */,
 				CC3EC4762445833D0052EDD7 /* AppDelegate.swift in Sources */,
+				CC2BDD5A2445BDA400B06C93 /* TabCollectionViewCell.swift in Sources */,
 				CC3EC48A2445A67F0052EDD7 /* API.swift in Sources */,
-				CC3EC48C2445AB080052EDD7 /* TabViewController.swift in Sources */,
 				CC3EC4782445833D0052EDD7 /* SceneDelegate.swift in Sources */,
 				CC3EC48E2445ADB80052EDD7 /* Constant.swift in Sources */,
 			);
