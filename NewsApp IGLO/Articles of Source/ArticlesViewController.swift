@@ -12,6 +12,7 @@ class ArticlesViewController: UIViewController {
     var articles : [Article] = []
     var source : Source?
     var page = 1
+    var isFetching : Bool = false
     
     lazy var tableView : UITableView = {
        let tableView = UITableView()
@@ -44,7 +45,8 @@ class ArticlesViewController: UIViewController {
             else {
             return
         }
-            
+        if !isFetching {
+            isFetching = true
             API.fetchEverything(sourceID: sourceId, page: page, { (json) in
                 guard let json = json else {
                     return
@@ -56,6 +58,9 @@ class ArticlesViewController: UIViewController {
                 self.articles += news
                 self.tableView.reloadData()
                 self.page += 1
+                self.isFetching = false
             })
+        }
+        
     }
 }

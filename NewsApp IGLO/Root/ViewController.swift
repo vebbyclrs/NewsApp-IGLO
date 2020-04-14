@@ -21,6 +21,11 @@ class ViewController: UIViewController {
         return tableView
     }()
     
+//    lazy var searchController : UISearchController = {
+//       let searchController = UISearchController(searchResultsController: nil)
+//        searchController.
+//    }()
+    
     lazy var categoryView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -74,6 +79,13 @@ class ViewController: UIViewController {
     }
 
 }
+
+//extension ViewController : UISearchBarDelegate, UISearchControllerDelegate {
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        <#code#>
+//    }
+//}
+
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         Constant.newsCategories.count
